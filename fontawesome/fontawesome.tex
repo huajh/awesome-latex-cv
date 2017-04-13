@@ -1,0 +1,892 @@
+%% start of file `fontawesome.tex'.
+%% Copyright 2013-2016 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+\documentclass{ltxdoc}
+%\GetFileInfo{\jobname.sty}
+\def\fileversion{4.6.3.2}
+\def\filedate{May 22, 2016}
+\usepackage{lmodern}
+\usepackage[numbered]{hypdoc}
+\usepackage{hologo}
+\usepackage{hyperref, xcolor}
+\definecolor{myblue}{rgb}{0.22,0.45,0.70}% light blue
+\hypersetup{colorlinks=true, linkcolor=myblue, urlcolor=myblue, hyperindex}
+\usepackage{longtable, booktabs}
+\usepackage{tikz}
+\usepackage{xparse, ifthen}
+\usepackage{\jobname}
+\EnableCrossrefs
+\CodelineIndex
+\RecordChanges
+
+\begin{document}
+\title{The \textsf{\jobname} package\\High quality web icons}
+\author{%
+  Xavier Danaux\thanks{%
+    URL: \href{https://github.com/xdanaux/fontawesome-latex}{github.com/xdanaux/fontawesome-latex};
+    Licence: \href{http://latex-project.org/lppl/lppl-1-3c.txt}{LaTeX Project Public License, version 1.3c};
+    E-mail: \href{mailto:xdanaux@gmail.com}{\tt xdanaux@gmail.com}.} (\hologo{(La)TeX} code)\\%
+  Dave Gandy\thanks{%
+    URL: \href{http://fontawesome.io}{fontawesome.io};
+    Licence: \href{http://scripts.sil.org/cms/scripts/render_download.php?format=file&media_id=OFL_plaintext&filename=OFL11.txt}{SIL Open Font License, version 1.1}.} (font design)}
+\date{Version \fileversion, released on \filedate}
+\maketitle
+
+\begin{abstract}
+The \textsf{\jobname} package grants access to 634 web-related icons provided by the included \emph{Font Awesome} font, designed by Dave Gandy and released under the open SIL Open Font License.
+
+This package works both with \hologo{Xe}\hologo{(La)TeX} and Lua\hologo{(La)TeX} (using \textsf{fontspec} to load the included original \textsf{otf} font), as well as (pdf)\hologo{(La)TeX} (using an included \textsf{type1} conversion and character mapping of the font).
+\end{abstract}
+
+% changelog
+\makeatletter
+\let\PrintMacroName@original\PrintMacroName
+%\let\PrintDescribeMacro\@gobble
+%\let\PrintDescribeEnv\@gobble
+\let\PrintMacroName\@gobble
+%\let\PrintEnvName\@gobble
+\begin{macro}{\fa500Px}
+\changes{v4.6.3.2}{2016/05/22}{Removed direct command.}
+\end{macro}
+\begin{macro}{\faHourglass}
+\changes{v4.6.3.1}{2016/05/15}{Fixed definition.}
+\end{macro}
+\begin{macro}{\faHourglassX}
+\changes{v4.6.3.1}{2016/05/15}{Changed direct command name to \cs{faHourglass[X]}.}
+\end{macro}
+\begin{macro}{\faBatteryX}
+\changes{v4.6.3.1}{2016/05/15}{Changed direct command name \cs{faBattery[X]}.}
+\end{macro}
+\changes{v4.6.3}  {2016/05/15}{Update to match Font Awesome version 4.6.3, with a total of 634 icons.}
+\changes{v4.4.0}  {2015/07/30}{Update to match Font Awesome version 4.4.0, with a total of 585 icons.}
+\changes{v4.3.0-2}{2015/07/30}{Corrected the (pdf)\hologo{(La)TeX} font definitions to enable scaling, and enabled dvi/ps support.}
+\changes{v4.3.0-1}{2015/07/10}{Converted the otf font to 1000upm to avoid a bug within xdvipdfmx.}
+\changes{v4.3.0}  {2015/07/07}{Update to match Font Awesome version 4.3.0, with a total of 519 icons, and enabled pdf\hologo{(La)TeX} support.}
+\changes{v3.1.1}  {2013/05/10}{Update to match Font Awesome version 3.1.1, with 53 new icons.}
+\changes{v3.0.2-1}{2013/03/23}{Corrected the swap of the \cs{text-height} and \cs{text-width} icons.}
+\changes{v3.0.2}  {2013/03/21}{First public release (version number set to match the included FontAwesome.otf font version), requiring \hologo{Xe}- or Lua\hologo{(La)TeX}.}
+\begin{macro}{\faTextHeight}
+\changes{v3.0.2-1}{2013/03/23}{Corrected binding.}
+\end{macro}
+\begin{macro}{\faTextWidth}
+\changes{v3.0.2-1}{2013/03/23}{Corrected binding.}
+\end{macro}
+\let\PrintMacroName\PrintMacroName@original
+\makeatother
+
+\bigskip
+
+\section{Introduction}
+The \textsf{\jobname} package aims to enable easy access in \hologo{(La)TeX} to high quality icons covering
+web application,
+transportation,
+gender,
+file type,
+spinner,
+form control,
+payment,
+chart,
+currency,
+text editor,
+directional,
+video player,
+brand and
+medical
+pictograms.
+%\hyperref[section:web_application]{web application},
+%\hyperref[section:transportation]{transportation},
+%\hyperref[section:gender]{gender},
+%\hyperref[section:file_type]{file type},
+%\hyperref[section:spinner]{spinner},
+%\hyperref[section:form_control]{form control},
+%\hyperref[section:payment]{payment},
+%\hyperref[section:chart]{chart},
+%\hyperref[section:currency]{currency},
+%\hyperref[section:text_editor]{text editor},
+%\hyperref[section:directional]{directional},
+%\hyperref[section:video_player]{video player},
+%\hyperref[section:brand]{brand} and
+%\hyperref[section:medical]{medical}
+%pictograms.
+It is a redistribution of the free (as in beer) \emph{Font Awesome} font with specific bindings for \hologo{(La)TeX}.
+
+\section{Requirements}
+The \textsf{\jobname} package requires the \textsf{fontspec} package when using the \hologo{Xe}\hologo{(La)TeX} or Lua\hologo{(La)TeX} engines to load the included otf font. When using the (pdf)\hologo{(La)TeX} engine, the \textsf{\jobname} package doesn't require any external package.
+
+\section{Usage}
+\DescribeMacro{\faicon}
+Once the \textsf{\jobname} package loaded, icons can be accessed through the general \cs{faicon}, which takes as mandatory argument the \meta{name} of the desired icon, or through a direct command specific to each icon. The full list of icon designs, names and direct commands are showcased in section \ref{section:icons}.
+
+\section{List of icons\label{section:icons}}
+\newenvironment{showcase}%
+  {%
+%   \begin{longtable}{ccp{3cm}p{3.5cm}p{1cm}}% debug: shows icons with both generic and specific commands
+   \begin{longtable}{clll}
+   \cmidrule[\heavyrulewidth]{1-3}% \toprule
+%   \bfseries Icon& \bfseries Icon& \bfseries Name& \bfseries Direct command& \\% debug
+   \bfseries Icon& \bfseries Name& \bfseries Direct command& \\
+   \cmidrule{1-3}\endhead}
+  {\cmidrule[\heavyrulewidth]{1-3}% \bottomrule
+   \end{longtable}}
+\NewDocumentCommand{\showcaseicon}{mmg}{%
+%  \faicon{#1}& \csname#2\endcsname& \itshape #1& \ttfamily \textbackslash #2\index{\ttfamily \textbackslash #2}& \IfNoValueTF{#3}{}{\tag{#3}}\\}% debug
+  \faicon{#1}& \itshape #1& \ttfamily \textbackslash #2\index{\ttfamily \textbackslash #2}& \IfNoValueTF{#3}{}{\tag{#3}}\\}
+\newcommand{\tag}[1]{{%
+  \small\sffamily%
+  \ifthenelse{\equal{#1}{new}}{%
+    \tikz[baseline={(TAG.base)}]{
+      \node[white, fill=myblue, rounded corners=3pt, inner sep=1.5pt] (TAG) {new!\vphantom{Ay!}};
+    }}{}%
+  \ifthenelse{\equal{#1}{gone}}{%
+    \tikz[baseline={(TAG.base)}]{
+      \node[black!50, fill=black!25, rounded corners=3pt, inner sep=1.5pt] (TAG) {gone (?)\vphantom{Ay!}};
+    }}{}%
+  \ifthenelse{\equal{#1}{alias}}{%
+    \textcolor{black!50}{(alias)}}{}%
+  }}
+%\subsection{Web application icons\label{section:web_application}}
+%\subsection{Transportation icons\label{section:transportation}}
+%\subsection{...}
+\begin{showcase}
+  \showcaseicon{500px}{faicon\{500px\}}{}
+  \showcaseicon{adjust}{faAdjust}{}
+  \showcaseicon{adn}{faAdn}{}
+  \showcaseicon{align-center}{faAlignCenter}{}
+  \showcaseicon{align-justify}{faAlignJustify}{}
+  \showcaseicon{align-left}{faAlignLeft}{}
+  \showcaseicon{align-right}{faAlignRight}{}
+  \showcaseicon{amazon}{faAmazon}{}
+  \showcaseicon{ambulance}{faAmbulance}{}
+  \showcaseicon{american-sign-language-interpreting}{faAmericanSignLanguageInterpreting}{}
+  \showcaseicon{anchor}{faAnchor}{}
+  \showcaseicon{android}{faAndroid}{}
+  \showcaseicon{angellist}{faAngellist}{}
+  \showcaseicon{angle-double-down}{faAngleDoubleDown}{}
+  \showcaseicon{angle-double-left}{faAngleDoubleLeft}{}
+  \showcaseicon{angle-double-right}{faAngleDoubleRight}{}
+  \showcaseicon{angle-double-up}{faAngleDoubleUp}{}
+  \showcaseicon{angle-down}{faAngleDown}{}
+  \showcaseicon{angle-left}{faAngleLeft}{}
+  \showcaseicon{angle-right}{faAngleRight}{}
+  \showcaseicon{angle-up}{faAngleUp}{}
+  \showcaseicon{apple}{faApple}{}
+  \showcaseicon{archive}{faArchive}{}
+  \showcaseicon{area-chart}{faAreaChart}{}
+  \showcaseicon{arrow-circle-down}{faArrowCircleDown}{}
+  \showcaseicon{arrow-circle-left}{faArrowCircleLeft}{}
+  \showcaseicon{arrow-circle-o-down}{faArrowCircleODown}{}
+  \showcaseicon{arrow-circle-o-left}{faArrowCircleOLeft}{}
+  \showcaseicon{arrow-circle-o-right}{faArrowCircleORight}{}
+  \showcaseicon{arrow-circle-o-up}{faArrowCircleOUp}{}
+  \showcaseicon{arrow-circle-right}{faArrowCircleRight}{}
+  \showcaseicon{arrow-circle-up}{faArrowCircleUp}{}
+  \showcaseicon{arrow-down}{faArrowDown}{}
+  \showcaseicon{arrow-left}{faArrowLeft}{}
+  \showcaseicon{arrow-right}{faArrowRight}{}
+  \showcaseicon{arrow-up}{faArrowUp}{}
+  \showcaseicon{arrows}{faArrows}{}
+  \showcaseicon{arrows-alt}{faArrowsAlt}{}
+  \showcaseicon{arrows-h}{faArrowsH}{}
+  \showcaseicon{arrows-v}{faArrowsV}{}
+  \showcaseicon{asl-interpreting}{faAslInterpreting}{alias}
+  \showcaseicon{assistive-listening-systems}{faAssistiveListeningSystems}{}
+  \showcaseicon{asterisk}{faAsterisk}{}
+  \showcaseicon{at}{faAt}{}
+  \showcaseicon{audio-description}{faAudioDescription}{}
+  \showcaseicon{automobile}{faAutomobile}{alias}
+  \showcaseicon{backward}{faBackward}{}
+  \showcaseicon{balance-scale}{faBalanceScale}{}
+  \showcaseicon{ban}{faBan}{}
+  \showcaseicon{bank}{faBank}{alias}
+  \showcaseicon{bar-chart}{faBarChart}{}
+  \showcaseicon{bar-chart-o}{faBarChartO}{alias}
+  \showcaseicon{barcode}{faBarcode}{}
+  \showcaseicon{bars}{faBars}{}
+  \showcaseicon{battery-0}{faBattery[0]}{alias}
+  \showcaseicon{battery-1}{faBattery[1]}{alias}
+  \showcaseicon{battery-2}{faBattery[2]}{alias}
+  \showcaseicon{battery-3}{faBattery[3]}{alias}
+  \showcaseicon{battery-4}{faBattery[4]}{alias}
+  \showcaseicon{battery-empty}{faBatteryEmpty}{}
+  \showcaseicon{battery-full}{faBatteryFull}{}
+  \showcaseicon{battery-half}{faBatteryHalf}{}
+  \showcaseicon{battery-quarter}{faBatteryQuarter}{}
+  \showcaseicon{battery-three-quarters}{faBatteryThreeQuarters}{}
+  \showcaseicon{bed}{faBed}{}
+  \showcaseicon{beer}{faBeer}{}
+  \showcaseicon{behance}{faBehance}{}
+  \showcaseicon{behance-square}{faBehanceSquare}{}
+  \showcaseicon{bell}{faBell}{}
+  \showcaseicon{bell-o}{faBellO}{}
+  \showcaseicon{bell-slash}{faBellSlash}{}
+  \showcaseicon{bell-slash-o}{faBellSlashO}{}
+  \showcaseicon{bicycle}{faBicycle}{}
+  \showcaseicon{binoculars}{faBinoculars}{}
+  \showcaseicon{birthday-cake}{faBirthdayCake}{}
+  \showcaseicon{bitbucket}{faBitbucket}{}
+  \showcaseicon{bitbucket-square}{faBitbucketSquare}{}
+  \showcaseicon{bitcoin}{faBitcoin}{alias}
+  \showcaseicon{black-tie}{faBlackTie}{}
+  \showcaseicon{blind}{faBlind}{}
+  \showcaseicon{bluetooth}{faBluetooth}{}
+  \showcaseicon{bluetooth-b}{faBluetoothB}{}
+  \showcaseicon{bold}{faBold}{}
+  \showcaseicon{bolt}{faBolt}{}
+  \showcaseicon{bomb}{faBomb}{}
+  \showcaseicon{book}{faBook}{}
+  \showcaseicon{bookmark}{faBookmark}{}
+  \showcaseicon{bookmark-o}{faBookmarkO}{}
+  \showcaseicon{braille}{faBraille}{}
+  \showcaseicon{briefcase}{faBriefcase}{}
+  \showcaseicon{btc}{faBtc}{}
+  \showcaseicon{bug}{faBug}{}
+  \showcaseicon{building}{faBuilding}{}
+  \showcaseicon{building-o}{faBuildingO}{}
+  \showcaseicon{bullhorn}{faBullhorn}{}
+  \showcaseicon{bullseye}{faBullseye}{}
+  \showcaseicon{bus}{faBus}{}
+  \showcaseicon{buysellads}{faBuysellads}{}
+  \showcaseicon{cab}{faCab}{alias}
+  \showcaseicon{calculator}{faCalculator}{}
+  \showcaseicon{calendar}{faCalendar}{}
+  \showcaseicon{calendar-check-o}{faCalendarCheckO}{}
+  \showcaseicon{calendar-minus-o}{faCalendarMinusO}{}
+  \showcaseicon{calendar-o}{faCalendarO}{}
+  \showcaseicon{calendar-plus-o}{faCalendarPlusO}{}
+  \showcaseicon{calendar-times-o}{faCalendarTimesO}{}
+  \showcaseicon{camera}{faCamera}{}
+  \showcaseicon{camera-retro}{faCameraRetro}{}
+  \showcaseicon{car}{faCar}{}
+  \showcaseicon{caret-down}{faCaretDown}{}
+  \showcaseicon{caret-left}{faCaretLeft}{}
+  \showcaseicon{caret-right}{faCaretRight}{}
+  \showcaseicon{caret-square-o-down}{faCaretSquareODown}{}
+  \showcaseicon{caret-square-o-left}{faCaretSquareOLeft}{}
+  \showcaseicon{caret-square-o-right}{faCaretSquareORight}{}
+  \showcaseicon{caret-square-o-up}{faCaretSquareOUp}{}
+  \showcaseicon{caret-up}{faCaretUp}{}
+  \showcaseicon{cart-arrow-down}{faCartArrowDown}{}
+  \showcaseicon{cart-plus}{faCartPlus}{}
+  \showcaseicon{cc}{faCc}{}
+  \showcaseicon{cc-amex}{faCcAmex}{}
+  \showcaseicon{cc-diners-club}{faCcDinersClub}{}
+  \showcaseicon{cc-discover}{faCcDiscover}{}
+  \showcaseicon{cc-jcb}{faCcJcb}{}
+  \showcaseicon{cc-mastercard}{faCcMastercard}{}
+  \showcaseicon{cc-paypal}{faCcPaypal}{}
+  \showcaseicon{cc-stripe}{faCcStripe}{}
+  \showcaseicon{cc-visa}{faCcVisa}{}
+  \showcaseicon{certificate}{faCertificate}{}
+  \showcaseicon{chain}{faChain}{alias}
+  \showcaseicon{chain-broken}{faChainBroken}{}
+  \showcaseicon{check}{faCheck}{}
+  \showcaseicon{check-circle}{faCheckCircle}{}
+  \showcaseicon{check-circle-o}{faCheckCircleO}{}
+  \showcaseicon{check-square}{faCheckSquare}{}
+  \showcaseicon{check-square-o}{faCheckSquareO}{}
+  \showcaseicon{chevron-circle-down}{faChevronCircleDown}{}
+  \showcaseicon{chevron-circle-left}{faChevronCircleLeft}{}
+  \showcaseicon{chevron-circle-right}{faChevronCircleRight}{}
+  \showcaseicon{chevron-circle-up}{faChevronCircleUp}{}
+  \showcaseicon{chevron-down}{faChevronDown}{}
+  \showcaseicon{chevron-left}{faChevronLeft}{}
+  \showcaseicon{chevron-right}{faChevronRight}{}
+  \showcaseicon{chevron-up}{faChevronUp}{}
+  \showcaseicon{child}{faChild}{}
+  \showcaseicon{chrome}{faChrome}{}
+  \showcaseicon{circle}{faCircle}{}
+  \showcaseicon{circle-o}{faCircleO}{}
+  \showcaseicon{circle-o-notch}{faCircleONotch}{}
+  \showcaseicon{circle-thin}{faCircleThin}{}
+  \showcaseicon{clipboard}{faClipboard}{}
+  \showcaseicon{clock-o}{faClockO}{}
+  \showcaseicon{clone}{faClone}{}
+  \showcaseicon{close}{faClose}{alias}
+  \showcaseicon{cloud}{faCloud}{}
+  \showcaseicon{cloud-download}{faCloudDownload}{}
+  \showcaseicon{cloud-upload}{faCloudUpload}{}
+  \showcaseicon{cny}{faCny}{alias}
+  \showcaseicon{code}{faCode}{}
+  \showcaseicon{code-fork}{faCodeFork}{}
+  \showcaseicon{codepen}{faCodepen}{}
+  \showcaseicon{codiepie}{faCodiepie}{}
+  \showcaseicon{coffee}{faCoffee}{}
+  \showcaseicon{cog}{faCog}{}
+  \showcaseicon{cogs}{faCogs}{}
+  \showcaseicon{columns}{faColumns}{}
+  \showcaseicon{comment}{faComment}{}
+  \showcaseicon{comment-o}{faCommentO}{}
+  \showcaseicon{commenting}{faCommenting}{}
+  \showcaseicon{commenting-o}{faCommentingO}{}
+  \showcaseicon{comments}{faComments}{}
+  \showcaseicon{comments-o}{faCommentsO}{}
+  \showcaseicon{compass}{faCompass}{}
+  \showcaseicon{compress}{faCompress}{}
+  \showcaseicon{connectdevelop}{faConnectdevelop}{}
+  \showcaseicon{contao}{faContao}{}
+  \showcaseicon{copy}{faCopy}{alias}
+  \showcaseicon{copyright}{faCopyright}{}
+  \showcaseicon{creative-commons}{faCreativeCommons}{}
+  \showcaseicon{credit-card}{faCreditCard}{}
+  \showcaseicon{credit-card-alt}{faCreditCardAlt}{}
+  \showcaseicon{crop}{faCrop}{}
+  \showcaseicon{crosshairs}{faCrosshairs}{}
+  \showcaseicon{css3}{faCss3}{}
+  \showcaseicon{cube}{faCube}{}
+  \showcaseicon{cubes}{faCubes}{}
+  \showcaseicon{cut}{faCut}{alias}
+  \showcaseicon{cutlery}{faCutlery}{}
+  \showcaseicon{dashboard}{faDashboard}{alias}
+  \showcaseicon{dashcube}{faDashcube}{}
+  \showcaseicon{database}{faDatabase}{}
+  \showcaseicon{deaf}{faDeaf}{}
+  \showcaseicon{deafness}{faDeafness}{alias}
+  \showcaseicon{dedent}{faDedent}{alias}
+  \showcaseicon{delicious}{faDelicious}{}
+  \showcaseicon{desktop}{faDesktop}{}
+  \showcaseicon{deviantart}{faDeviantart}{}
+  \showcaseicon{diamond}{faDiamond}{}
+  \showcaseicon{digg}{faDigg}{}
+  \showcaseicon{dollar}{faDollar}{alias}
+  \showcaseicon{dot-circle-o}{faDotCircleO}{}
+  \showcaseicon{download}{faDownload}{}
+  \showcaseicon{dribbble}{faDribbble}{}
+  \showcaseicon{dropbox}{faDropbox}{}
+  \showcaseicon{drupal}{faDrupal}{}
+  \showcaseicon{edge}{faEdge}{}
+  \showcaseicon{edit}{faEdit}{alias}
+  \showcaseicon{eject}{faEject}{}
+  \showcaseicon{ellipsis-h}{faEllipsisH}{}
+  \showcaseicon{ellipsis-v}{faEllipsisV}{}
+  \showcaseicon{empire}{faEmpire}{}
+  \showcaseicon{envelope}{faEnvelope}{}
+  \showcaseicon{envelope-o}{faEnvelopeO}{}
+  \showcaseicon{envelope-square}{faEnvelopeSquare}{}
+  \showcaseicon{envira}{faEnvira}{}
+  \showcaseicon{eraser}{faEraser}{}
+  \showcaseicon{eur}{faEur}{}
+  \showcaseicon{euro}{faEuro}{alias}
+  \showcaseicon{exchange}{faExchange}{}
+  \showcaseicon{exclamation}{faExclamation}{}
+  \showcaseicon{exclamation-circle}{faExclamationCircle}{}
+  \showcaseicon{exclamation-triangle}{faExclamationTriangle}{}
+  \showcaseicon{expand}{faExpand}{}
+  \showcaseicon{expeditedssl}{faExpeditedssl}{}
+  \showcaseicon{external-link}{faExternalLink}{}
+  \showcaseicon{external-link-square}{faExternalLinkSquare}{}
+  \showcaseicon{eye}{faEye}{}
+  \showcaseicon{eye-slash}{faEyeSlash}{}
+  \showcaseicon{eyedropper}{faEyedropper}{}
+  \showcaseicon{fa}{faFa}{alias}
+  \showcaseicon{facebook}{faFacebook}{}
+  \showcaseicon{facebook-f}{faFacebookF}{alias}
+  \showcaseicon{facebook-official}{faFacebookOfficial}{}
+  \showcaseicon{facebook-square}{faFacebookSquare}{}
+  \showcaseicon{fast-backward}{faFastBackward}{}
+  \showcaseicon{fast-forward}{faFastForward}{}
+  \showcaseicon{fax}{faFax}{}
+  \showcaseicon{feed}{faFeed}{alias}
+  \showcaseicon{female}{faFemale}{}
+  \showcaseicon{fighter-jet}{faFighterJet}{}
+  \showcaseicon{file}{faFile}{}
+  \showcaseicon{file-archive-o}{faFileArchiveO}{}
+  \showcaseicon{file-audio-o}{faFileAudioO}{}
+  \showcaseicon{file-code-o}{faFileCodeO}{}
+  \showcaseicon{file-excel-o}{faFileExcelO}{}
+  \showcaseicon{file-image-o}{faFileImageO}{}
+  \showcaseicon{file-movie-o}{faFileMovieO}{alias}
+  \showcaseicon{file-o}{faFileO}{}
+  \showcaseicon{file-pdf-o}{faFilePdfO}{}
+  \showcaseicon{file-photo-o}{faFilePhotoO}{alias}
+  \showcaseicon{file-picture-o}{faFilePictureO}{alias}
+  \showcaseicon{file-powerpoint-o}{faFilePowerpointO}{}
+  \showcaseicon{file-sound-o}{faFileSoundO}{alias}
+  \showcaseicon{file-text}{faFileText}{}
+  \showcaseicon{file-text-o}{faFileTextO}{}
+  \showcaseicon{file-video-o}{faFileVideoO}{}
+  \showcaseicon{file-word-o}{faFileWordO}{}
+  \showcaseicon{file-zip-o}{faFileZipO}{alias}
+  \showcaseicon{files-o}{faFilesO}{}
+  \showcaseicon{film}{faFilm}{}
+  \showcaseicon{filter}{faFilter}{}
+  \showcaseicon{fire}{faFire}{}
+  \showcaseicon{fire-extinguisher}{faFireExtinguisher}{}
+  \showcaseicon{firefox}{faFirefox}{}
+  \showcaseicon{first-order}{faFirstOrder}{}
+  \showcaseicon{flag}{faFlag}{}
+  \showcaseicon{flag-checkered}{faFlagCheckered}{}
+  \showcaseicon{flag-o}{faFlagO}{}
+  \showcaseicon{flash}{faFlash}{alias}
+  \showcaseicon{flask}{faFlask}{}
+  \showcaseicon{flickr}{faFlickr}{}
+  \showcaseicon{floppy-o}{faFloppyO}{}
+  \showcaseicon{folder}{faFolder}{}
+  \showcaseicon{folder-o}{faFolderO}{}
+  \showcaseicon{folder-open}{faFolderOpen}{}
+  \showcaseicon{folder-open-o}{faFolderOpenO}{}
+  \showcaseicon{font}{faFont}{}
+  \showcaseicon{font-awesome}{faFontAwesome}{}
+  \showcaseicon{fonticons}{faFonticons}{}
+  \showcaseicon{fort-awesome}{faFortAwesome}{}
+  \showcaseicon{forumbee}{faForumbee}{}
+  \showcaseicon{forward}{faForward}{}
+  \showcaseicon{foursquare}{faFoursquare}{}
+  \showcaseicon{frown-o}{faFrownO}{}
+  \showcaseicon{futbol-o}{faFutbolO}{}
+  \showcaseicon{gamepad}{faGamepad}{}
+  \showcaseicon{gavel}{faGavel}{}
+  \showcaseicon{gbp}{faGbp}{}
+  \showcaseicon{ge}{faGe}{alias}
+  \showcaseicon{gear}{faGear}{alias}
+  \showcaseicon{gears}{faGears}{alias}
+  \showcaseicon{genderless}{faGenderless}{}
+  \showcaseicon{get-pocket}{faGetPocket}{}
+  \showcaseicon{gg}{faGg}{}
+  \showcaseicon{gg-circle}{faGgCircle}{}
+  \showcaseicon{gift}{faGift}{}
+  \showcaseicon{git}{faGit}{}
+  \showcaseicon{git-square}{faGitSquare}{}
+  \showcaseicon{github}{faGithub}{}
+  \showcaseicon{github-alt}{faGithubAlt}{}
+  \showcaseicon{github-square}{faGithubSquare}{}
+  \showcaseicon{gitlab}{faGitlab}{}
+  \showcaseicon{gittip}{faGittip}{alias}
+  \showcaseicon{glass}{faGlass}{}
+  \showcaseicon{glide}{faGlide}{}
+  \showcaseicon{glide-g}{faGlideG}{}
+  \showcaseicon{globe}{faGlobe}{}
+  \showcaseicon{google}{faGoogle}{}
+  \showcaseicon{google-plus}{faGooglePlus}{}
+  \showcaseicon{google-plus-circle}{faGooglePlusCircle}{alias}
+  \showcaseicon{google-plus-official}{faGooglePlusOfficial}{}
+  \showcaseicon{google-plus-square}{faGooglePlusSquare}{}
+  \showcaseicon{google-wallet}{faGoogleWallet}{}
+  \showcaseicon{graduation-cap}{faGraduationCap}{}
+  \showcaseicon{gratipay}{faGratipay}{}
+  \showcaseicon{group}{faGroup}{alias}
+  \showcaseicon{h-square}{faHSquare}{}
+  \showcaseicon{hacker-news}{faHackerNews}{}
+  \showcaseicon{hand-grab-o}{faHandGrabO}{alias}
+  \showcaseicon{hand-lizard-o}{faHandLizardO}{}
+  \showcaseicon{hand-o-down}{faHandODown}{}
+  \showcaseicon{hand-o-left}{faHandOLeft}{}
+  \showcaseicon{hand-o-right}{faHandORight}{}
+  \showcaseicon{hand-o-up}{faHandOUp}{}
+  \showcaseicon{hand-paper-o}{faHandPaperO}{}
+  \showcaseicon{hand-peace-o}{faHandPeaceO}{}
+  \showcaseicon{hand-pointer-o}{faHandPointerO}{}
+  \showcaseicon{hand-rock-o}{faHandRockO}{}
+  \showcaseicon{hand-scissors-o}{faHandScissorsO}{}
+  \showcaseicon{hand-spock-o}{faHandSpockO}{}
+  \showcaseicon{hand-stop-o}{faHandStopO}{alias}
+  \showcaseicon{hard-of-hearing}{faHardOfHearing}{alias}
+  \showcaseicon{hashtag}{faHashtag}{}
+  \showcaseicon{hdd-o}{faHddO}{}
+  \showcaseicon{header}{faHeader}{}
+  \showcaseicon{headphones}{faHeadphones}{}
+  \showcaseicon{heart}{faHeart}{}
+  \showcaseicon{heart-o}{faHeartO}{}
+  \showcaseicon{heartbeat}{faHeartbeat}{}
+  \showcaseicon{history}{faHistory}{}
+  \showcaseicon{home}{faHome}{}
+  \showcaseicon{hospital-o}{faHospitalO}{}
+  \showcaseicon{hotel}{faHotel}{alias}
+  \showcaseicon{hourglass}{faHourglass}{}
+  \showcaseicon{hourglass-1}{faHourglass[1]}{alias}
+  \showcaseicon{hourglass-2}{faHourglass[2]}{alias}
+  \showcaseicon{hourglass-3}{faHourglass[3]}{alias}
+  \showcaseicon{hourglass-end}{faHourglassEnd}{}
+  \showcaseicon{hourglass-half}{faHourglassHalf}{}
+  \showcaseicon{hourglass-o}{faHourglassO}{}
+  \showcaseicon{hourglass-start}{faHourglassStart}{}
+  \showcaseicon{houzz}{faHouzz}{}
+  \showcaseicon{html5}{faHtml5}{}
+  \showcaseicon{i-cursor}{faICursor}{}
+  \showcaseicon{ils}{faIls}{}
+  \showcaseicon{image}{faImage}{alias}
+  \showcaseicon{inbox}{faInbox}{}
+  \showcaseicon{indent}{faIndent}{}
+  \showcaseicon{industry}{faIndustry}{}
+  \showcaseicon{info}{faInfo}{}
+  \showcaseicon{info-circle}{faInfoCircle}{}
+  \showcaseicon{inr}{faInr}{}
+  \showcaseicon{instagram}{faInstagram}{}
+  \showcaseicon{institution}{faInstitution}{alias}
+  \showcaseicon{internet-explorer}{faInternetExplorer}{}
+  \showcaseicon{intersex}{faIntersex}{alias}
+  \showcaseicon{ioxhost}{faIoxhost}{}
+  \showcaseicon{italic}{faItalic}{}
+  \showcaseicon{joomla}{faJoomla}{}
+  \showcaseicon{jpy}{faJpy}{}
+  \showcaseicon{jsfiddle}{faJsfiddle}{}
+  \showcaseicon{key}{faKey}{}
+  \showcaseicon{keyboard-o}{faKeyboardO}{}
+  \showcaseicon{krw}{faKrw}{}
+  \showcaseicon{language}{faLanguage}{}
+  \showcaseicon{laptop}{faLaptop}{}
+  \showcaseicon{lastfm}{faLastfm}{}
+  \showcaseicon{lastfm-square}{faLastfmSquare}{}
+  \showcaseicon{leaf}{faLeaf}{}
+  \showcaseicon{leanpub}{faLeanpub}{}
+  \showcaseicon{legal}{faLegal}{alias}
+  \showcaseicon{lemon-o}{faLemonO}{}
+  \showcaseicon{level-down}{faLevelDown}{}
+  \showcaseicon{level-up}{faLevelUp}{}
+  \showcaseicon{life-bouy}{faLifeBouy}{alias}
+  \showcaseicon{life-buoy}{faLifeBuoy}{alias}
+  \showcaseicon{life-ring}{faLifeRing}{}
+  \showcaseicon{life-saver}{faLifeSaver}{alias}
+  \showcaseicon{lightbulb-o}{faLightbulbO}{}
+  \showcaseicon{line-chart}{faLineChart}{}
+  \showcaseicon{link}{faLink}{}
+  \showcaseicon{linkedin}{faLinkedin}{}
+  \showcaseicon{linkedin-square}{faLinkedinSquare}{}
+  \showcaseicon{linux}{faLinux}{}
+  \showcaseicon{list}{faList}{}
+  \showcaseicon{list-alt}{faListAlt}{}
+  \showcaseicon{list-ol}{faListOl}{}
+  \showcaseicon{list-ul}{faListUl}{}
+  \showcaseicon{location-arrow}{faLocationArrow}{}
+  \showcaseicon{lock}{faLock}{}
+  \showcaseicon{long-arrow-down}{faLongArrowDown}{}
+  \showcaseicon{long-arrow-left}{faLongArrowLeft}{}
+  \showcaseicon{long-arrow-right}{faLongArrowRight}{}
+  \showcaseicon{long-arrow-up}{faLongArrowUp}{}
+  \showcaseicon{low-vision}{faLowVision}{}
+  \showcaseicon{magic}{faMagic}{}
+  \showcaseicon{magnet}{faMagnet}{}
+  \showcaseicon{mail-forward}{faMailForward}{alias}
+  \showcaseicon{mail-reply}{faMailReply}{alias}
+  \showcaseicon{mail-reply-all}{faMailReplyAll}{alias}
+  \showcaseicon{male}{faMale}{}
+  \showcaseicon{map}{faMap}{}
+  \showcaseicon{map-marker}{faMapMarker}{}
+  \showcaseicon{map-o}{faMapO}{}
+  \showcaseicon{map-pin}{faMapPin}{}
+  \showcaseicon{map-signs}{faMapSigns}{}
+  \showcaseicon{mars}{faMars}{}
+  \showcaseicon{mars-double}{faMarsDouble}{}
+  \showcaseicon{mars-stroke}{faMarsStroke}{}
+  \showcaseicon{mars-stroke-h}{faMarsStrokeH}{}
+  \showcaseicon{mars-stroke-v}{faMarsStrokeV}{}
+  \showcaseicon{maxcdn}{faMaxcdn}{}
+  \showcaseicon{meanpath}{faMeanpath}{}
+  \showcaseicon{medium}{faMedium}{}
+  \showcaseicon{medkit}{faMedkit}{}
+  \showcaseicon{meh-o}{faMehO}{}
+  \showcaseicon{mercury}{faMercury}{}
+  \showcaseicon{microphone}{faMicrophone}{}
+  \showcaseicon{microphone-slash}{faMicrophoneSlash}{}
+  \showcaseicon{minus}{faMinus}{}
+  \showcaseicon{minus-circle}{faMinusCircle}{}
+  \showcaseicon{minus-square}{faMinusSquare}{}
+  \showcaseicon{minus-square-o}{faMinusSquareO}{}
+  \showcaseicon{mixcloud}{faMixcloud}{}
+  \showcaseicon{mobile}{faMobile}{}
+  \showcaseicon{mobile-phone}{faMobilePhone}{alias}
+  \showcaseicon{modx}{faModx}{}
+  \showcaseicon{money}{faMoney}{}
+  \showcaseicon{moon-o}{faMoonO}{}
+  \showcaseicon{mortar-board}{faMortarBoard}{alias}
+  \showcaseicon{motorcycle}{faMotorcycle}{}
+  \showcaseicon{mouse-pointer}{faMousePointer}{}
+  \showcaseicon{music}{faMusic}{}
+  \showcaseicon{navicon}{faNavicon}{alias}
+  \showcaseicon{neuter}{faNeuter}{}
+  \showcaseicon{newspaper-o}{faNewspaperO}{}
+  \showcaseicon{object-group}{faObjectGroup}{}
+  \showcaseicon{object-ungroup}{faObjectUngroup}{}
+  \showcaseicon{odnoklassniki}{faOdnoklassniki}{}
+  \showcaseicon{odnoklassniki-square}{faOdnoklassnikiSquare}{}
+  \showcaseicon{opencart}{faOpencart}{}
+  \showcaseicon{openid}{faOpenid}{}
+  \showcaseicon{opera}{faOpera}{}
+  \showcaseicon{optin-monster}{faOptinMonster}{}
+  \showcaseicon{outdent}{faOutdent}{}
+  \showcaseicon{pagelines}{faPagelines}{}
+  \showcaseicon{paint-brush}{faPaintBrush}{}
+  \showcaseicon{paper-plane}{faPaperPlane}{}
+  \showcaseicon{paper-plane-o}{faPaperPlaneO}{}
+  \showcaseicon{paperclip}{faPaperclip}{}
+  \showcaseicon{paragraph}{faParagraph}{}
+  \showcaseicon{paste}{faPaste}{alias}
+  \showcaseicon{pause}{faPause}{}
+  \showcaseicon{pause-circle}{faPauseCircle}{}
+  \showcaseicon{pause-circle-o}{faPauseCircleO}{}
+  \showcaseicon{paw}{faPaw}{}
+  \showcaseicon{paypal}{faPaypal}{}
+  \showcaseicon{pencil}{faPencil}{}
+  \showcaseicon{pencil-square}{faPencilSquare}{}
+  \showcaseicon{pencil-square-o}{faPencilSquareO}{}
+  \showcaseicon{percent}{faPercent}{}
+  \showcaseicon{phone}{faPhone}{}
+  \showcaseicon{phone-square}{faPhoneSquare}{}
+  \showcaseicon{photo}{faPhoto}{alias}
+  \showcaseicon{picture-o}{faPictureO}{}
+  \showcaseicon{pie-chart}{faPieChart}{}
+  \showcaseicon{pied-piper}{faPiedPiper}{}
+  \showcaseicon{pied-piper-alt}{faPiedPiperAlt}{}
+  \showcaseicon{pied-piper-pp}{faPiedPiperPp}{}
+  \showcaseicon{pinterest}{faPinterest}{}
+  \showcaseicon{pinterest-p}{faPinterestP}{}
+  \showcaseicon{pinterest-square}{faPinterestSquare}{}
+  \showcaseicon{plane}{faPlane}{}
+  \showcaseicon{play}{faPlay}{}
+  \showcaseicon{play-circle}{faPlayCircle}{}
+  \showcaseicon{play-circle-o}{faPlayCircleO}{}
+  \showcaseicon{plug}{faPlug}{}
+  \showcaseicon{plus}{faPlus}{}
+  \showcaseicon{plus-circle}{faPlusCircle}{}
+  \showcaseicon{plus-square}{faPlusSquare}{}
+  \showcaseicon{plus-square-o}{faPlusSquareO}{}
+  \showcaseicon{power-off}{faPowerOff}{}
+  \showcaseicon{print}{faPrint}{}
+  \showcaseicon{product-hunt}{faProductHunt}{}
+  \showcaseicon{puzzle-piece}{faPuzzlePiece}{}
+  \showcaseicon{qq}{faQq}{}
+  \showcaseicon{qrcode}{faQrcode}{}
+  \showcaseicon{question}{faQuestion}{}
+  \showcaseicon{question-circle}{faQuestionCircle}{}
+  \showcaseicon{question-circle-o}{faQuestionCircleO}{}
+  \showcaseicon{quote-left}{faQuoteLeft}{}
+  \showcaseicon{quote-right}{faQuoteRight}{}
+  \showcaseicon{ra}{faRa}{alias}
+  \showcaseicon{random}{faRandom}{}
+  \showcaseicon{rebel}{faRebel}{}
+  \showcaseicon{recycle}{faRecycle}{}
+  \showcaseicon{reddit}{faReddit}{}
+  \showcaseicon{reddit-alien}{faRedditAlien}{}
+  \showcaseicon{reddit-square}{faRedditSquare}{}
+  \showcaseicon{refresh}{faRefresh}{}
+  \showcaseicon{registered}{faRegistered}{}
+  \showcaseicon{remove}{faRemove}{alias}
+  \showcaseicon{renren}{faRenren}{}
+  \showcaseicon{reorder}{faReorder}{alias}
+  \showcaseicon{repeat}{faRepeat}{}
+  \showcaseicon{reply}{faReply}{}
+  \showcaseicon{reply-all}{faReplyAll}{}
+  \showcaseicon{resistance}{faResistance}{alias}
+  \showcaseicon{retweet}{faRetweet}{}
+  \showcaseicon{rmb}{faRmb}{alias}
+  \showcaseicon{road}{faRoad}{}
+  \showcaseicon{rocket}{faRocket}{}
+  \showcaseicon{rotate-left}{faRotateLeft}{alias}
+  \showcaseicon{rotate-right}{faRotateRight}{alias}
+  \showcaseicon{rouble}{faRouble}{alias}
+  \showcaseicon{rss}{faRss}{}
+  \showcaseicon{rss-square}{faRssSquare}{}
+  \showcaseicon{rub}{faRub}{}
+  \showcaseicon{ruble}{faRuble}{alias}
+  \showcaseicon{rupee}{faRupee}{alias}
+  \showcaseicon{safari}{faSafari}{}
+  \showcaseicon{save}{faSave}{alias}
+  \showcaseicon{scissors}{faScissors}{}
+  \showcaseicon{scribd}{faScribd}{}
+  \showcaseicon{search}{faSearch}{}
+  \showcaseicon{search-minus}{faSearchMinus}{}
+  \showcaseicon{search-plus}{faSearchPlus}{}
+  \showcaseicon{sellsy}{faSellsy}{}
+  \showcaseicon{send}{faSend}{alias}
+  \showcaseicon{send-o}{faSendO}{alias}
+  \showcaseicon{server}{faServer}{}
+  \showcaseicon{share}{faShare}{}
+  \showcaseicon{share-alt}{faShareAlt}{}
+  \showcaseicon{share-alt-square}{faShareAltSquare}{}
+  \showcaseicon{share-square}{faShareSquare}{}
+  \showcaseicon{share-square-o}{faShareSquareO}{}
+  \showcaseicon{shekel}{faShekel}{alias}
+  \showcaseicon{sheqel}{faSheqel}{alias}
+  \showcaseicon{shield}{faShield}{}
+  \showcaseicon{ship}{faShip}{}
+  \showcaseicon{shirtsinbulk}{faShirtsinbulk}{}
+  \showcaseicon{shopping-bag}{faShoppingBag}{}
+  \showcaseicon{shopping-basket}{faShoppingBasket}{}
+  \showcaseicon{shopping-cart}{faShoppingCart}{}
+  \showcaseicon{sign-in}{faSignIn}{}
+  \showcaseicon{sign-language}{faSignLanguage}{}
+  \showcaseicon{sign-out}{faSignOut}{}
+  \showcaseicon{signal}{faSignal}{}
+  \showcaseicon{signing}{faSigning}{alias}
+  \showcaseicon{simplybuilt}{faSimplybuilt}{}
+  \showcaseicon{sitemap}{faSitemap}{}
+  \showcaseicon{skyatlas}{faSkyatlas}{}
+  \showcaseicon{skype}{faSkype}{}
+  \showcaseicon{slack}{faSlack}{}
+  \showcaseicon{sliders}{faSliders}{}
+  \showcaseicon{slideshare}{faSlideshare}{}
+  \showcaseicon{smile-o}{faSmileO}{}
+  \showcaseicon{snapchat}{faSnapchat}{}
+  \showcaseicon{snapchat-ghost}{faSnapchatGhost}{}
+  \showcaseicon{snapchat-square}{faSnapchatSquare}{}
+  \showcaseicon{soccer-ball-o}{faSoccerBallO}{alias}
+  \showcaseicon{sort}{faSort}{}
+  \showcaseicon{sort-alpha-asc}{faSortAlphaAsc}{}
+  \showcaseicon{sort-alpha-desc}{faSortAlphaDesc}{}
+  \showcaseicon{sort-amount-asc}{faSortAmountAsc}{}
+  \showcaseicon{sort-amount-desc}{faSortAmountDesc}{}
+  \showcaseicon{sort-asc}{faSortAsc}{}
+  \showcaseicon{sort-desc}{faSortDesc}{}
+  \showcaseicon{sort-down}{faSortDown}{alias}
+  \showcaseicon{sort-numeric-asc}{faSortNumericAsc}{}
+  \showcaseicon{sort-numeric-desc}{faSortNumericDesc}{}
+  \showcaseicon{sort-up}{faSortUp}{alias}
+  \showcaseicon{soundcloud}{faSoundcloud}{}
+  \showcaseicon{space-shuttle}{faSpaceShuttle}{}
+  \showcaseicon{spinner}{faSpinner}{}
+  \showcaseicon{spoon}{faSpoon}{}
+  \showcaseicon{spotify}{faSpotify}{}
+  \showcaseicon{square}{faSquare}{}
+  \showcaseicon{square-o}{faSquareO}{}
+  \showcaseicon{stack-exchange}{faStackExchange}{}
+  \showcaseicon{stack-overflow}{faStackOverflow}{}
+  \showcaseicon{star}{faStar}{}
+  \showcaseicon{star-half}{faStarHalf}{}
+  \showcaseicon{star-half-empty}{faStarHalfEmpty}{alias}
+  \showcaseicon{star-half-full}{faStarHalfFull}{alias}
+  \showcaseicon{star-half-o}{faStarHalfO}{}
+  \showcaseicon{star-o}{faStarO}{}
+  \showcaseicon{steam}{faSteam}{}
+  \showcaseicon{steam-square}{faSteamSquare}{}
+  \showcaseicon{step-backward}{faStepBackward}{}
+  \showcaseicon{step-forward}{faStepForward}{}
+  \showcaseicon{stethoscope}{faStethoscope}{}
+  \showcaseicon{sticky-note}{faStickyNote}{}
+  \showcaseicon{sticky-note-o}{faStickyNoteO}{}
+  \showcaseicon{stop}{faStop}{}
+  \showcaseicon{stop-circle}{faStopCircle}{}
+  \showcaseicon{stop-circle-o}{faStopCircleO}{}
+  \showcaseicon{street-view}{faStreetView}{}
+  \showcaseicon{strikethrough}{faStrikethrough}{}
+  \showcaseicon{stumbleupon}{faStumbleupon}{}
+  \showcaseicon{stumbleupon-circle}{faStumbleuponCircle}{}
+  \showcaseicon{subscript}{faSubscript}{}
+  \showcaseicon{subway}{faSubway}{}
+  \showcaseicon{suitcase}{faSuitcase}{}
+  \showcaseicon{sun-o}{faSunO}{}
+  \showcaseicon{superscript}{faSuperscript}{}
+  \showcaseicon{support}{faSupport}{alias}
+  \showcaseicon{table}{faTable}{}
+  \showcaseicon{tablet}{faTablet}{}
+  \showcaseicon{tachometer}{faTachometer}{}
+  \showcaseicon{tag}{faTag}{}
+  \showcaseicon{tags}{faTags}{}
+  \showcaseicon{tasks}{faTasks}{}
+  \showcaseicon{taxi}{faTaxi}{}
+  \showcaseicon{television}{faTelevision}{}
+  \showcaseicon{tencent-weibo}{faTencentWeibo}{}
+  \showcaseicon{terminal}{faTerminal}{}
+  \showcaseicon{text-height}{faTextHeight}{}
+  \showcaseicon{text-width}{faTextWidth}{}
+  \showcaseicon{th}{faTh}{}
+  \showcaseicon{th-large}{faThLarge}{}
+  \showcaseicon{th-list}{faThList}{}
+  \showcaseicon{themeisle}{faThemeisle}{}
+  \showcaseicon{thumb-tack}{faThumbTack}{}
+  \showcaseicon{thumbs-down}{faThumbsDown}{}
+  \showcaseicon{thumbs-o-down}{faThumbsODown}{}
+  \showcaseicon{thumbs-o-up}{faThumbsOUp}{}
+  \showcaseicon{thumbs-up}{faThumbsUp}{}
+  \showcaseicon{ticket}{faTicket}{}
+  \showcaseicon{times}{faTimes}{}
+  \showcaseicon{times-circle}{faTimesCircle}{}
+  \showcaseicon{times-circle-o}{faTimesCircleO}{}
+  \showcaseicon{tint}{faTint}{}
+  \showcaseicon{toggle-down}{faToggleDown}{alias}
+  \showcaseicon{toggle-left}{faToggleLeft}{alias}
+  \showcaseicon{toggle-off}{faToggleOff}{}
+  \showcaseicon{toggle-on}{faToggleOn}{}
+  \showcaseicon{toggle-right}{faToggleRight}{alias}
+  \showcaseicon{toggle-up}{faToggleUp}{alias}
+  \showcaseicon{trademark}{faTrademark}{}
+  \showcaseicon{train}{faTrain}{}
+  \showcaseicon{transgender}{faTransgender}{}
+  \showcaseicon{transgender-alt}{faTransgenderAlt}{}
+  \showcaseicon{trash}{faTrash}{}
+  \showcaseicon{trash-o}{faTrashO}{}
+  \showcaseicon{tree}{faTree}{}
+  \showcaseicon{trello}{faTrello}{}
+  \showcaseicon{tripadvisor}{faTripadvisor}{}
+  \showcaseicon{trophy}{faTrophy}{}
+  \showcaseicon{truck}{faTruck}{}
+  \showcaseicon{try}{faTry}{}
+  \showcaseicon{tty}{faTty}{}
+  \showcaseicon{tumblr}{faTumblr}{}
+  \showcaseicon{tumblr-square}{faTumblrSquare}{}
+  \showcaseicon{turkish-lira}{faTurkishLira}{alias}
+  \showcaseicon{tv}{faTv}{alias}
+  \showcaseicon{twitch}{faTwitch}{}
+  \showcaseicon{twitter}{faTwitter}{}
+  \showcaseicon{twitter-square}{faTwitterSquare}{}
+  \showcaseicon{umbrella}{faUmbrella}{}
+  \showcaseicon{underline}{faUnderline}{}
+  \showcaseicon{undo}{faUndo}{}
+  \showcaseicon{universal-access}{faUniversalAccess}{}
+  \showcaseicon{university}{faUniversity}{}
+  \showcaseicon{unlink}{faUnlink}{alias}
+  \showcaseicon{unlock}{faUnlock}{}
+  \showcaseicon{unlock-alt}{faUnlockAlt}{}
+  \showcaseicon{unsorted}{faUnsorted}{alias}
+  \showcaseicon{upload}{faUpload}{}
+  \showcaseicon{usb}{faUsb}{}
+  \showcaseicon{usd}{faUsd}{}
+  \showcaseicon{user}{faUser}{}
+  \showcaseicon{user-md}{faUserMd}{}
+  \showcaseicon{user-plus}{faUserPlus}{}
+  \showcaseicon{user-secret}{faUserSecret}{}
+  \showcaseicon{user-times}{faUserTimes}{}
+  \showcaseicon{users}{faUsers}{}
+  \showcaseicon{venus}{faVenus}{}
+  \showcaseicon{venus-double}{faVenusDouble}{}
+  \showcaseicon{venus-mars}{faVenusMars}{}
+  \showcaseicon{viacoin}{faViacoin}{}
+  \showcaseicon{viadeo}{faViadeo}{}
+  \showcaseicon{viadeo-square}{faViadeoSquare}{}
+  \showcaseicon{video-camera}{faVideoCamera}{}
+  \showcaseicon{vimeo}{faVimeo}{}
+  \showcaseicon{vimeo-square}{faVimeoSquare}{}
+  \showcaseicon{vine}{faVine}{}
+  \showcaseicon{vk}{faVk}{}
+  \showcaseicon{volume-control-phone}{faVolumeControlPhone}{}
+  \showcaseicon{volume-down}{faVolumeDown}{}
+  \showcaseicon{volume-off}{faVolumeOff}{}
+  \showcaseicon{volume-up}{faVolumeUp}{}
+  \showcaseicon{warning}{faWarning}{alias}
+  \showcaseicon{wechat}{faWechat}{alias}
+  \showcaseicon{weibo}{faWeibo}{}
+  \showcaseicon{weixin}{faWeixin}{}
+  \showcaseicon{whatsapp}{faWhatsapp}{}
+  \showcaseicon{wheelchair}{faWheelchair}{}
+  \showcaseicon{wheelchair-alt}{faWheelchairAlt}{}
+  \showcaseicon{wifi}{faWifi}{}
+  \showcaseicon{wikipedia-w}{faWikipediaW}{}
+  \showcaseicon{windows}{faWindows}{}
+  \showcaseicon{won}{faWon}{alias}
+  \showcaseicon{wordpress}{faWordpress}{}
+  \showcaseicon{wpbeginner}{faWpbeginner}{}
+  \showcaseicon{wpforms}{faWpforms}{}
+  \showcaseicon{wrench}{faWrench}{}
+  \showcaseicon{xing}{faXing}{}
+  \showcaseicon{xing-square}{faXingSquare}{}
+  \showcaseicon{y-combinator}{faYCombinator}{}
+  \showcaseicon{y-combinator-square}{faYCombinatorSquare}{alias}
+  \showcaseicon{yahoo}{faYahoo}{}
+  \showcaseicon{yc}{faYc}{alias}
+  \showcaseicon{yc-square}{faYcSquare}{alias}
+  \showcaseicon{yelp}{faYelp}{}
+  \showcaseicon{yen}{faYen}{alias}
+  \showcaseicon{yoast}{faYoast}{}
+  \showcaseicon{youtube}{faYoutube}{}
+  \showcaseicon{youtube-play}{faYoutubePlay}{}
+  \showcaseicon{youtube-square}{faYoutubeSquare}{}
+\end{showcase}
+
+\PrintChanges
+\PrintIndex
+\end{document}
+
+
+%% end of file `fontawesome.tex'.
