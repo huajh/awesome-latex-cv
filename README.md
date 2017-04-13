@@ -2,10 +2,10 @@
 
 + This is CV in English.
 
-+ 中文用户可以到 [zh-cn branch](https://github.com/huajh/awesome-latex-cv/tree/zh-cn)， 包括所有所需文件。
++ 中文用户可以到 [zh-cn](https://github.com/huajh/awesome-latex-cv/tree/zh-cn) branch， 包括所有所需文件。
 
 
-+ zh-cn分支仓库比较大，主要是中文字体比较大，下载速度慢的可以移步到 [zh-cn branch](https://github.com/huajh/awesome-latex-cv/tree/zh-cn-nofonts)，该分支不含中文字体，提供国内下载链接。
++ zh-cn分支仓库比较大，主要是中文字体比较大，下载速度慢的可以移步到 [zh-cn-nofonts](https://github.com/huajh/awesome-latex-cv/tree/zh-cn-nofonts) branch，该分支不含中文字体，提供国内下载链接。
 
 
 
