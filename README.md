@@ -42,3 +42,12 @@ huajh-awesome-cv.tex
   - section_awards.tex
   - section_interests.tex
 ```
+
+Since the Simplified Chinese fonts files in `zh-cn` branch are very large,  if you only need a CV in Enlish, it is better to clone only the master branch. 
+
+The command is 
+
+```
+ git clone https://github.com/huajh/awesome-latex-cv.git --branch master --depth 1 --single-branch
+
+```
