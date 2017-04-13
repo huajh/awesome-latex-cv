@@ -1,4 +1,4 @@
-This is LuaTeX, Version beta-0.76.0-2013052306 (rev 4627)  (format=lualatex 2016.9.23)  13 APR 2017 10:57
+This is LuaTeX, Version beta-0.76.0-2013052306 (rev 4627)  (format=lualatex 2016.9.23)  13 APR 2017 12:18
  restricted \write18 enabled.
 **huajh-awesome-cv.tex
 (./huajh-awesome-cv.tex
@@ -377,7 +377,7 @@ luaotfload:  possibly updated libraries. The merged version is not
 luaotfload:  supported as it is a frozen instance. Problems can be
 luaotfload:  reported to the ConTeXt mailing list.”
 luaotfload: pop namespace from font loader -- non-destructive
-luaotfload: fontloader loaded in 0.018 seconds
+luaotfload: fontloader loaded in 0.026 seconds
 luatexbase-mcb: inserting 'luaotfload.node_processor'
 at position 1 in 'pre_linebreak_filter'
 luatexbase-mcb: inserting 'luaotfload.node_processor'
@@ -1183,9 +1183,9 @@ onts/otf/sourcesanspro-light.luc)
 luaotfload | load: auto-selecting default features for script: dflt
 luaotfload | load: path lookup of “fonts/SourceSansPro-Light” unsuccessful, 
 falling back to file:
-luaotfload: font no 23 (SourceSansPro-Light) defines feature kern for script lat
+luaotfload: font no 23 (SourceSansPro-Light) defines feature zero for script lat
 n
-luaotfload: font no 23 (SourceSansPro-Light) defines feature kern for script lat
+luaotfload: font no 23 (SourceSansPro-Light) defines feature zero for script lat
 n
 *************************************************
 * fontspec warning: "no-mapping-ligtex"
