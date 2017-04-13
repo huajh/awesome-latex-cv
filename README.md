@@ -1,10 +1,10 @@
 # Huajh Awesome Latex CV 中文版
 
-**English Version** is in the [master branch](https://github.com/huajh/awesome-latex-cv/tree/master)
++ **English Version** is in the [master branch](https://github.com/huajh/awesome-latex-cv/tree/master)
 
-该分支包含所有文件，**包括中文字体**，文件比较大
++ 该分支包含所有文件，**包括中文字体**，文件比较大
 
-如果不想下载字体，移步到 [zh-cn branch](https://github.com/huajh/awesome-latex-cv/tree/zh-cn-nofonts)，不含中文字体，提供国内下载链接。
++ 如果不想下载字体，移步到 [zh-cn branch](https://github.com/huajh/awesome-latex-cv/tree/zh-cn-nofonts)，不含中文字体，提供国内下载链接。
 
 
 ## 下载/clone
