@@ -5,9 +5,14 @@
 
 An example output pdf can be found [here](http://huajh7.com/cv/junhaohua_cv_en.pdf)
 
-[![Example](http://huajh7.com/img/cv/cv1.png)](http://huajh7.com/cv/junhaohua_cv_en.pdf)
+[![Example](http://huajh7.com/img/cv/awesome-cv-1.png)](http://huajh7.com/cv/junhaohua_cv_en.pdf)
 
-[![Example](http://huajh7.com/img/cv/cv2.png)](http://huajh7.com/cv/junhaohua_cv_en.pdf)
+[![Example](http://huajh7.com/img/cv/awesome-cv-2.png)](http://huajh7.com/cv/junhaohua_cv_en.pdf)
+
+
+### Setup 
+
+This latex CV template uses luatex engine and needs [fontawesome Package version 4.6.3.2.](http://www.ctan.org/tex-archive/fonts/fontawesome) or higher version.
 
 ### About
 

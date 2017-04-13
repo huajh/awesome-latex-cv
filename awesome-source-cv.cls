@@ -260,17 +260,15 @@
 % Needs \@firstname, \@lastname and \@tagline to be defined
 \newcommand*{\makecvheader}{
 	\ifundef{\@alternative}{
+		 
 		\ifundef{\@photodiameter}{
-			\begin{minipage}{\linewidth}
-				\color{accentcolor}\user{\@firstname}{\@lastname}\color{black}\\
-				\small{\@socialinfo}
-			\end{minipage}      	      	
+			\begin{minipage}{\linewidth}    	      	
 		}{
-			\begin{minipage}{\dimexpr\linewidth-\@photodiameter-2em}
-				\color{accentcolor}\user{\@firstname}{\@lastname}\color{black}\\
-				\small{\@socialinfo}
-			\end{minipage}          	
+			\begin{minipage}{\dimexpr\linewidth-\@photodiameter-2em}        	
 		}
+				\color{accentcolor}\user{\@firstname}{\@lastname}\color{black} \vspace*{0.3cm}\\				 	
+				\small{\@socialinfo}
+			\end{minipage}  
 		\ifdef{\@photodiameter}{
 			\begin{minipage}{\@photodiameter}
 				\begin{tikzpicture}%
@@ -285,20 +283,15 @@
 	    \resumetitle{\@tagline}
 	}{
 	    \ifundef{\@photodiameter}{
-			\begin{minipage}{\linewidth}
-				\user{\@firstname}{\@lastname}\\
-				\resumetitle{\@tagline}
-				\smallskip\\
-				\small{\@socialinfo}
-			\end{minipage}      	
+			\begin{minipage}{\linewidth}     	
 	    }{
-			\begin{minipage} {\dimexpr\linewidth-\@photodiameter-2em}
-				\user{\@firstname}{\@lastname}\\
+			\begin{minipage} {\dimexpr\linewidth-\@photodiameter-2em}    	
+	    }
+				\user{\@firstname}{\@lastname} \vspace*{0.3cm}\\
 				\resumetitle{\@tagline}
 				\smallskip\\
 				\small{\@socialinfo}
-			\end{minipage}      	
-	    }
+			\end{minipage}  	    
 		\ifdef{\@photodiameter}{
 			\begin{minipage}{\@photodiameter}
 			      \begin{tikzpicture}%
