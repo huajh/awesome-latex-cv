@@ -1,9 +1,10 @@
 ## Huajh Awesome Latex CV 中文版本
 
+English Version is in the [master branch](https://github.com/huajh/awesome-latex-cv/tree/master)
 
 ### 样例
 
-中文样例: [PDF](http://huajh7.com/cv/awesome-cv.pdf)
+中文样例: [PDF](http://huajh7.com/cv/awesome-cv-cn.pdf)
 
 [![Example](http://huajh7.com/img/cv/awesome-cv-cn-1.png)](http://huajh7.com/cv/awesome-cv-cn.pdf)
 [![Example](http://huajh7.com/img/cv/awesome-cv-cn-2.png)](http://huajh7.com/cv/awesome-cv-cn.pdf)
@@ -23,7 +24,7 @@
 % cls file
 awesome-source-cv.cls   
 
-% main file
+% main file 主函数
 huajh-awesome-cv.tex
 
 %subsection
