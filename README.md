@@ -1,28 +1,20 @@
-## Huajh Awesome Latex CV  中文版本
+## Huajh Awesome Latex CV 中文版本
 
 
 ### 样例
 
-An example output pdf can be found [here](http://huajh7.com/cv/awesome-cv.pdf)
+中文样例: [PDF](http://huajh7.com/cv/awesome-cv.pdf)
 
-[![Example](http://huajh7.com/img/cv/awesome-cv-1.png)](http://huajh7.com/cv/awesome-cv-cn.pdf)
-[![Example](http://huajh7.com/img/cv/awesome-cv-2.png)](http://huajh7.com/cv/awesome-cv-cn.pdf)
+[![Example](http://huajh7.com/img/cv/awesome-cv-cn-1.png)](http://huajh7.com/cv/awesome-cv-cn.pdf)
+[![Example](http://huajh7.com/img/cv/awesome-cv-cn-2.png)](http://huajh7.com/cv/awesome-cv-cn.pdf)
 
 
-### Setup 
+### 编译
 
-This latex CV template uses `xelatex` engine and needs 
++  采用 `xelatex` 编译。
++  需要 [fontawesome Package version 4.6.3.2.](http://www.ctan.org/tex-archive/fonts/fontawesome) 或更高版本（已经放在仓库的主目录下）。
++  中文支持借鉴[billryan/resume/tree/zh_CN的中文分支](https://github.com/billryan/resume/tree/zh_CN),`zh_cn-adobefonts_external.sty`,`zh_cn-adobefonts_internal.sty`和adobe字体库(在`fonts/zh_cn-adobe/`目录下,56.4MB)都来自于该仓库分支，感谢分享。
 
-needs [fontawesome Package version 4.6.3.2.](http://www.ctan.org/tex-archive/fonts/fontawesome) or higher version.
-
-### About
-
-Huajh awesome Latex CV was originally based on a CV template created by Christophe Roger (Darwiin). This template uses `luatex` engine and `Source Sans Pro Font` from Adobe.
-
-More informations about the original Christophe Roger (Darwiin) template can be found here :
-
-   -  [ Github ](https://github.com/darwiin/awesome-neue-latex-cv)
-   -  [ Overleaf ](https://www.overleaf.com/latex/templates/awesome-source-cv/wrdjtkkytqcw)   
 
 
 ### The Latex 文件结构
