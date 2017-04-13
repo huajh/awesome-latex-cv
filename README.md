@@ -1,19 +1,37 @@
-## Huajh Awesome Latex CV  
+# Huajh Awesome Latex CV  
+
++ This is CV in English.
+
++ 中文用户可以到 [zh-cn branch](https://github.com/huajh/awesome-latex-cv/tree/zh-cn)， 包括所有所需文件。
 
 
-### Example
++ zh-cn分支仓库比较大，主要是中文字体比较大，下载速度慢的可以移步到 [zh-cn branch](https://github.com/huajh/awesome-latex-cv/tree/zh-cn-nofonts)，该分支不含中文字体，提供国内下载链接。
+
+
+
+## Example
 
 An example output pdf can be found [here](http://huajh7.com/cv/awesome-cv.pdf)
 
 [![Example](http://huajh7.com/img/cv/awesome-cv-1.png)](http://huajh7.com/cv/awesome-cv.pdf)
 [![Example](http://huajh7.com/img/cv/awesome-cv-2.png)](http://huajh7.com/cv/awesome-cv.pdf)
 
+## clone
+Since the Simplified Chinese fonts files in `zh-cn` branch are very large,  if you only need a CV in Enlish, it is better to clone only the master branch. 
 
-### Setup 
+The command is 
+
+```
+ git clone https://github.com/huajh/awesome-latex-cv.git --branch master --depth 1 --single-branch
+
+```
+
+
+## Setup 
 
 This latex CV template uses `luatex` engine and needs [fontawesome Package version 4.6.3.2.](http://www.ctan.org/tex-archive/fonts/fontawesome) or higher version.
 
-### About
+## About
 
 Huajh awesome Latex CV was originally based on a CV template created by Christophe Roger (Darwiin). This template use `luatex` engine and `Source Sans Pro Font` from Adobe.
 
@@ -23,7 +41,7 @@ More informations about the original Christophe Roger (Darwiin) template can be 
    -  [ Overleaf ](https://www.overleaf.com/latex/templates/awesome-source-cv/wrdjtkkytqcw)   
 
 
-### The Latex file structure
+## The Latex file structure
 
 ```matlab
 % cls file
@@ -43,11 +61,7 @@ huajh-awesome-cv.tex
   - section_interests.tex
 ```
 
-Since the Simplified Chinese fonts files in `zh-cn` branch are very large,  if you only need a CV in Enlish, it is better to clone only the master branch. 
 
-The command is 
+## License
 
-```
- git clone https://github.com/huajh/awesome-latex-cv.git --branch master --depth 1 --single-branch
-
-```
+The LaTeX Project Public License
