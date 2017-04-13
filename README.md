@@ -5,8 +5,8 @@
 
 An example output pdf can be found [here](http://huajh7.com/cv/junhaohua_cv_en.pdf)
 
-[![Example](http://huajh7.com/img/cv/awesome-cv-1.png)](http://huajh7.com/cv/junhaohua_cv_en.pdf)
-[![Example](http://huajh7.com/img/cv/awesome-cv-2.png)](http://huajh7.com/cv/junhaohua_cv_en.pdf)
+[![Example](http://huajh7.com/img/cv/awesome-cv-1.png)](http://huajh7.com/cv/awesome-cv.pdf)
+[![Example](http://huajh7.com/img/cv/awesome-cv-2.png)](http://huajh7.com/cv/awesome-cv.pdf)
 
 
 ### Setup 
