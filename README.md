@@ -1,14 +1,13 @@
-Huajh Awesome Latex CV  
-=================
-
+## Huajh Awesome Latex CV  
 
 
 ### Example
 
 An example output pdf can be found [here](http://huajh7.com/cv/junhaohua_cv_en.pdf)
 
-[![Example](http://huajh7.com/img/cv/cv1.jpg)](http://huajh7.com/cv/junhaohua_cv_en.pdf)
-[![Example](http://huajh7.com/img/cv/cv2.jpg)](http://huajh7.com/cv/junhaohua_cv_en.pdf)
+[![Example](http://huajh7.com/img/cv/cv1.png)](http://huajh7.com/cv/junhaohua_cv_en.pdf)
+
+[![Example](http://huajh7.com/img/cv/cv2.png)](http://huajh7.com/cv/junhaohua_cv_en.pdf)
 
 ### About
 
