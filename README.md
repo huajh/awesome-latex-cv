@@ -1,8 +1,22 @@
-## Huajh Awesome Latex CV 中文版本
+# Huajh Awesome Latex CV 中文版
 
-English Version is in the [master branch](https://github.com/huajh/awesome-latex-cv/tree/master)
+**English Version** is in the [master branch](https://github.com/huajh/awesome-latex-cv/tree/master)
 
-### 样例
+该分支包含所有文件，**包括中文字体**，文件比较大
+
+如果不想下载字体，移步到 [zh-cn branch](https://github.com/huajh/awesome-latex-cv/tree/zh-cn-nofonts)，不含中文字体，提供国内下载链接。
+
+
+## 下载/clone
+
+可以用以下命令仅clone该分支：
+
+```
+git clone --branch zh-cn --depth 1 --single-branch https://github.com/huajh/awesome-latex-cv.git  <folder>
+```
+
+
+## 样例
 
 中文样例: [PDF](http://huajh7.com/cv/awesome-cv-cn.pdf)
 
@@ -10,7 +24,7 @@ English Version is in the [master branch](https://github.com/huajh/awesome-latex
 [![Example](http://huajh7.com/img/cv/awesome-cv-cn-2.png)](http://huajh7.com/cv/awesome-cv-cn.pdf)
 
 
-### 编译
+## 编译
 
 +  采用 `xelatex` 编译。
 +  需要 [fontawesome Package version 4.6.3.2.](http://www.ctan.org/tex-archive/fonts/fontawesome) 或更高版本（已经放在仓库的主目录下）。
@@ -18,7 +32,7 @@ English Version is in the [master branch](https://github.com/huajh/awesome-latex
 
 
 
-### The Latex 文件结构
+## The Latex 文件结构
 
 ```matlab
 % cls file
@@ -37,3 +51,7 @@ huajh-awesome-cv.tex
   - section_awards.tex
   - section_interests.tex
 ```
+
+## License
+
+The LaTeX Project Public License
