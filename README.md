@@ -1,21 +1,23 @@
-## Huajh Awesome Latex CV  
+## Huajh Awesome Latex CV  中文版本
 
 
-### Example
+### 样例
 
-An example output pdf can be found [here](http://huajh7.com/cv/junhaohua_cv_en.pdf)
+An example output pdf can be found [here](http://huajh7.com/cv/awesome-cv.pdf)
 
-[![Example](http://huajh7.com/img/cv/awesome-cv-1.png)](http://huajh7.com/cv/awesome-cv.pdf)
-[![Example](http://huajh7.com/img/cv/awesome-cv-2.png)](http://huajh7.com/cv/awesome-cv.pdf)
+[![Example](http://huajh7.com/img/cv/awesome-cv-1.png)](http://huajh7.com/cv/awesome-cv-cn.pdf)
+[![Example](http://huajh7.com/img/cv/awesome-cv-2.png)](http://huajh7.com/cv/awesome-cv-cn.pdf)
 
 
 ### Setup 
 
-This latex CV template uses `luatex` engine and needs [fontawesome Package version 4.6.3.2.](http://www.ctan.org/tex-archive/fonts/fontawesome) or higher version.
+This latex CV template uses `xelatex` engine and needs 
+
+needs [fontawesome Package version 4.6.3.2.](http://www.ctan.org/tex-archive/fonts/fontawesome) or higher version.
 
 ### About
 
-Huajh awesome Latex CV was originally based on a CV template created by Christophe Roger (Darwiin). This template use `luatex` engine and `Source Sans Pro Font` from Adobe.
+Huajh awesome Latex CV was originally based on a CV template created by Christophe Roger (Darwiin). This template uses `luatex` engine and `Source Sans Pro Font` from Adobe.
 
 More informations about the original Christophe Roger (Darwiin) template can be found here :
 
@@ -23,7 +25,7 @@ More informations about the original Christophe Roger (Darwiin) template can be 
    -  [ Overleaf ](https://www.overleaf.com/latex/templates/awesome-source-cv/wrdjtkkytqcw)   
 
 
-### The Latex file structure
+### The Latex 文件结构
 
 ```matlab
 % cls file
