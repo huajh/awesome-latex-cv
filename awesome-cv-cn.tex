@@ -1,4 +1,6 @@
-% !TEX TS-program = luatex
+% !TEX TS-program = xelatex
+% % !TEX TS-program = luatex
+% !TEX encoding = UTF-8 Unicode
 % Awesome CV LaTeX Template
 %
 % This template has been downloaded from:
@@ -10,9 +12,14 @@
 
 \documentclass[localFont]{awesome-source-cv} %alternative
 
-\name{Junhao}{Hua}
+\usepackage{zh_cn-adobefonts_external} % Simplified Chinese Support using external fonts (./fonts/zn_cn-adobe/)
+%\usepackage{zh_cn-adobefonts_internal} % Simplified Chinese Support using system fonts
 
-\tagline{Machine Learning Engineer}
+
+
+\name{}{华俊豪}
+
+\tagline{机器学习算法工程师}
 \photo{2.5cm}{avatar}
 \socialinfo{
 	\homepage{huajh7.com}
@@ -21,11 +28,12 @@
 	\linkedin{junhaohua} \\
 	\smartphone{(+86) 15068820627}
 	\email{huajh7@gmail.com} \emailO{huajh@zju.edu.cn}\\
-	\address{No.38 Zheda Road, Xihu District, Hangzhou, Zhejiang, China}\\
-	\infos{2 Feb 1991, Longyou, Zhejiang, China}
+	\address{浙江省杭州市西湖区浙大路38号}\\
+	\infos{1991年2月2日出生于浙江省龙游县}
 }
 
 \begin{document}
+
 
 	\makecvheader
 
@@ -41,5 +49,5 @@
  	%\input{section_references} 				% Section References
 
 	\noindent \\		
-	(last update: 13 Apr. 2017)
+	（最近更新: 2017年4月13日）
 \end{document}
