@@ -1,4 +1,4 @@
-## Huajh Awesome Latex CV 中文版本
+# Huajh Awesome Latex CV 中文版本
 
 **English Version** is in the [master branch](https://github.com/huajh/awesome-latex-cv/tree/master)
 
@@ -6,17 +6,16 @@
 
 该分支**不包括中文字体**
 
-### 下载/clone
+## 下载/clone
 
 可以用以下命令仅clone这个分支：
 
 ```
 git clone --branch zh-cn-nofonts --depth 1 --single-branch https://github.com/huajh/awesome-latex-cv.git  <folder>
-
 ```
 
 
-### 说明
+## 说明
 
 
 由于zh-cn分支中的中文字体库太大，git clone的速度很比较慢。因此新建了这个分支，不包括中文字体库。
@@ -30,7 +29,7 @@ git clone --branch zh-cn-nofonts --depth 1 --single-branch https://github.com/hu
 \usepackage{zh_cn-adobefonts_internal} % Simplified Chinese Support using system fonts
 ```
 
-**可选方案**：
+### 可选方案
 
 如果你的系统未安装相关字体，我这里也提供了国内的[下载链接](https://pan.baidu.com/s/1qXEevJe), 应该有可靠的速度。
 将下载的字体放到`./fonts/zn_cn-adobe/`目录下。
@@ -38,7 +37,7 @@ git clone --branch zh-cn-nofonts --depth 1 --single-branch https://github.com/hu
 
 
 
-### 样例
+## 样例
 
 中文样例: [PDF](http://huajh7.com/cv/awesome-cv-cn.pdf)
 
@@ -49,7 +48,7 @@ git clone --branch zh-cn-nofonts --depth 1 --single-branch https://github.com/hu
 
 
 
-### 编译
+## 编译
 
 +  采用 `xelatex` 编译。
 +  需要 [fontawesome Package version 4.6.3.2.](http://www.ctan.org/tex-archive/fonts/fontawesome) 或更高版本（已经放在仓库的主目录下）。
@@ -57,7 +56,7 @@ git clone --branch zh-cn-nofonts --depth 1 --single-branch https://github.com/hu
 
 
 
-### The Latex 文件结构
+## The Latex 文件结构
 
 ```matlab
 % cls file
@@ -77,6 +76,6 @@ huajh-awesome-cv.tex
   - section_interests.tex
 ```
 
-### License
+## License
 
 The LaTeX Project Public License
