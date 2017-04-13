@@ -1,4 +1,4 @@
-# Huajh Awesome Latex CV 中文版本
+# Huajh Awesome Latex CV 中文版 
 
 **English Version** is in the [master branch](https://github.com/huajh/awesome-latex-cv/tree/master)
 
