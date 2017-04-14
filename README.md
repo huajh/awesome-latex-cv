@@ -4,7 +4,7 @@
 
 + 该分支包含所有文件，**包括中文字体**，文件比较大
 
-+ 如果不想下载字体，移步到 [zh-cn](https://github.com/huajh/awesome-latex-cv/tree/zh-cn-nofonts) branch，不含中文字体，提供国内下载链接。
++ 如果不想下载字体，移步到 [zh-cn](https://github.com/huajh/awesome-latex-cv/tree/zh-cn-nofonts) 分支。该分支不含中文字体，提供国内下载链接。
 
 
 ## 下载/clone
@@ -20,8 +20,8 @@ git clone --branch zh-cn --depth 1 --single-branch https://github.com/huajh/awes
 
 中文样例: [PDF](http://huajh7.com/cv/awesome-cv-cn.pdf)
 
-[![Example](http://huajh7.com/img/cv/awesome-cv-cn-1.png)](http://huajh7.com/cv/awesome-cv-cn.pdf)
-[![Example](http://huajh7.com/img/cv/awesome-cv-cn-2.png)](http://huajh7.com/cv/awesome-cv-cn.pdf)
+![Example](http://huajh7.com/img/cv/awesome-cv-cn-1.png)
+![Example](http://huajh7.com/img/cv/awesome-cv-cn-2.png)
 
 
 ## 编译
