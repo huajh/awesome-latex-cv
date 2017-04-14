@@ -5,16 +5,23 @@
 + 中文用户可以到 [zh-cn](https://github.com/huajh/awesome-latex-cv/tree/zh-cn) branch， 包括所有所需文件。
 
 
-+ zh-cn分支仓库比较大，主要是中文字体比较大，下载速度慢的可以移步到 [zh-cn-nofonts](https://github.com/huajh/awesome-latex-cv/tree/zh-cn-nofonts) branch，该分支不含中文字体，提供国内下载链接。
++ zh-cn分支仓库比较大，主要是中文字体比较大，国内用户下载速度慢的可以移步到 [zh-cn-nofonts](https://github.com/huajh/awesome-latex-cv/tree/zh-cn-nofonts) branch，该分支不含中文字体，提供国内下载链接。
 
 
 
 ## Example
 
-An example output pdf can be found [here](http://huajh7.com/cv/awesome-cv.pdf)
+An output example can be found [here](http://huajh7.com/cv/awesome-cv.pdf)
 
-[![Example](http://huajh7.com/img/cv/awesome-cv-1.png)](http://huajh7.com/cv/awesome-cv.pdf)
-[![Example](http://huajh7.com/img/cv/awesome-cv-2.png)](http://huajh7.com/cv/awesome-cv.pdf)
+[Example](http://huajh7.com/img/cv/awesome-cv-1.png)]
+[Example](http://huajh7.com/img/cv/awesome-cv-2.png)]
+
+
+中文样例: [PDF](http://huajh7.com/cv/awesome-cv-cn.pdf)
+
+[Example](http://huajh7.com/img/cv/awesome-cv-cn-1.png)
+[Example](http://huajh7.com/img/cv/awesome-cv-cn-2.png)
+
 
 ## clone
 Since the Simplified Chinese fonts files in `zh-cn` branch are very large,  if you only need a CV in Enlish, it is better to clone only the master branch. 
@@ -22,8 +29,7 @@ Since the Simplified Chinese fonts files in `zh-cn` branch are very large,  if y
 The command is 
 
 ```
- git clone https://github.com/huajh/awesome-latex-cv.git --branch master --depth 1 --single-branch
-
+ git clone --branch master --depth 1 --single-branch https://github.com/huajh/awesome-latex-cv.git 
 ```
 
 
