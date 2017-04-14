@@ -2,23 +2,31 @@
 
 + **English Version** is in the [master](https://github.com/huajh/awesome-latex-cv/tree/master) branch
 
-+ **中文版本**（包括所有所需文件）: [zh-cn](https://github.com/huajh/awesome-latex-cv/tree/zh-cn) branch
++ **中文版本**（包括所有所需文件）: [zh-cn](https://github.com/huajh/awesome-latex-cv/tree/zh-cn) 分支
 
 + 该分支**不包括中文字体**
 
+## 样例
+
+中文样例: [PDF](http://huajh7.com/cv/awesome-cv-cn.pdf)
+
+![Example](http://huajh7.com/img/cv/awesome-cv-cn-1.png)
+![Example](http://huajh7.com/img/cv/awesome-cv-cn-2.png)
+
+## 说明
+
+由于zh-cn分支中的中文字体库太大，git clone的速度很比较慢。因此新建了这个分支，不包括中文字体库。
+
 ## 下载/clone
 
-可以用以下命令仅clone这个分支：
+可以用以下命令clone该分支：
 
 ```
 git clone --branch zh-cn-nofonts --depth 1 --single-branch https://github.com/huajh/awesome-latex-cv.git  <folder>
 ```
 
+## 使用
 
-## 说明
-
-
-由于zh-cn分支中的中文字体库太大，git clone的速度很比较慢。因此新建了这个分支，不包括中文字体库。
 如果系统已经按照了adobe的中文字体，可以选择在`awesome-cv-cn.tex`主程序中选择使用系统字体，如下
 
 ```matlab
@@ -33,20 +41,6 @@ git clone --branch zh-cn-nofonts --depth 1 --single-branch https://github.com/hu
 
 如果你的系统未安装相关字体，我这里也提供了国内的[下载链接](https://pan.baidu.com/s/1qXEevJe), 应该有可靠的速度。
 将下载的字体放到`./fonts/zn_cn-adobe/`目录下。
-
-
-
-
-## 样例
-
-中文样例: [PDF](http://huajh7.com/cv/awesome-cv-cn.pdf)
-
-[![Example](http://huajh7.com/img/cv/awesome-cv-cn-1.png)](http://huajh7.com/cv/awesome-cv-cn.pdf)
-[![Example](http://huajh7.com/img/cv/awesome-cv-cn-2.png)](http://huajh7.com/cv/awesome-cv-cn.pdf)
-
-
-
-
 
 ## 编译
 
