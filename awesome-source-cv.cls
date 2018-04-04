@@ -49,7 +49,7 @@
 % Dependences
 %A Few Useful Packages
 \RequirePackage[frenchb]{babel}
-\RequirePackage[utf8]{luainputenc}
+%\RequirePackage[utf8]{luainputenc}  % luatex
 \RequirePackage{fontspec} 					                 % for loading fonts
 \RequirePackage{url,parskip} 	    % other packages for formatting
 \RequirePackage[usenames,dvipsnames]{xcolor}
@@ -66,7 +66,8 @@
 \RequirePackage[skins]{tcolorbox}
 
 
-\DeclareUnicodeCharacter{00E9}{\'{e}}
+% \DeclareUnicodeCharacter{00E9}{\'{e}}  %luatex
+
 % Define default accent colors
 \definecolor{basecolor}{HTML}{000066}       %BLUE
 
@@ -161,8 +162,17 @@
 \newcommand{\cvtag}[1]{%
   %\tikz[baseline]\node[anchor=base,draw=darkGrey!70,rounded corners=0.5ex,inner xsep=1ex,inner ysep =0.55ex,text height=1.3ex,text depth=.25ex]{#1};
 \begin{tikzpicture}
-	\node[anchor=base,draw=darkGrey!70,rounded corners=0.5ex,inner xsep=1ex,inner ysep =0.55ex,text height=1.3ex,text depth=.25ex]{#1};
+	\node[anchor=base,draw=darkGrey!70,rounded corners=0.5ex,inner xsep=1ex,inner ysep =0.4ex,text height=2ex,text depth=.25ex]{#1};
 \end{tikzpicture}	  
+}
+
+% Create a chinese tag
+% Usage: \cvtag{<tag label>}
+\newcommand{\cvtagcn}[1]{%
+	%\tikz[baseline]\node[anchor=base,draw=darkGrey!70,rounded corners=0.5ex,inner xsep=1ex,inner ysep =0.55ex,text height=1.3ex,text depth=.25ex]{#1};
+	\begin{tikzpicture}
+	\node[anchor=base,draw=darkGrey!70,rounded corners=0.5ex,inner xsep=1ex,inner ysep =0.4ex,text height=2ex,text depth=.25ex]{#1};
+	\end{tikzpicture}	  
 }
 
 % Render author's name
@@ -352,6 +362,17 @@
   \end{longtable}
 }
 
+
+% Render an experience in the experiences environment
+% Usage: 
+% \tags {<Technology list>}
+
+\newcommand\tags[1]{
+	\foreach \n in {#1}{\cvtagcn{\n}} 
+}
+
+
+
 % Render an experience in the experiences environment
 % Usage: 
 % \experience
@@ -385,5 +406,6 @@
                    	\end{minipage}										\\*
                  & \footnotesize{\foreach \n in {#9}{\cvtag{\n}}} 	\\
   }
+
 
 \newcommand\emptySeparator{\multicolumn{2}{c}{}\\}
