@@ -294,13 +294,20 @@
 			\end{minipage}  	    
 		\ifdef{\@photodiameter}{
 			\begin{minipage}{\@photodiameter}
-			      \begin{tikzpicture}%
-					\node[circle, text=white, minimum size=2.5cm,
-						path picture={\node at (path picture bounding box.center){
-							\includegraphics[width=2.5cm]{\@photo}
-						};
-					}]{ };
-			      \end{tikzpicture}				
+%				\begin{tikzpicture}%
+%				\node[circle, text=white, minimum size=2.5cm,
+%				path picture={\node at (path picture bounding box.center){
+%						\includegraphics[width=2.5cm]{\@photo}
+%					};
+%				}]{ };
+%				\end{tikzpicture}		
+				\begin{tikzpicture}%
+				\node[text=white, minimum width=2.8cm, minimum height=2.8cm, %minimum size=2.8cm,
+				path picture={\node at (path picture bounding box.center){
+						\includegraphics[width=2.5cm]{\@photo}
+					};
+				}]{ };
+				\end{tikzpicture}			
 			\end{minipage} 			
 %      \begin{minipage}{\@photodiameter}
 %      	\tikz\path[fill overzoom image={\@photo}]circle[radius=0.5\linewidth];
