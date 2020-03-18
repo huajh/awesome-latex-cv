@@ -20,8 +20,8 @@ git clone --branch zh-cn --depth 1 --single-branch https://github.com/huajh/awes
 
 中文样例: [PDF](http://huajh7.com/cv/awesome-cv-cn.pdf)
 
-![Example](http://huajh7.com/img/cv/awesome-cv-cn-1.png)
-![Example](http://huajh7.com/img/cv/awesome-cv-cn-2.png)
+![Example](http://huajh.github.io/img/cv/awesome-cv-cn-1.png)
+![Example](http://huajh.github.io/img/cv/awesome-cv-cn-2.png)
 
 
 ## 编译
