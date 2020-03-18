@@ -14,13 +14,11 @@
 An output example can be found [here](huajh.github.io/cv/awesome-cv.pdf)
 
 ![Example](http://huajh.github.io/img/cv/awesome-cv-1.png)
-![Example](http://huajh.github.io/img/cv/awesome-cv-2.png)
 
 
 **中文样例**: [PDF](http://huajh.github.io/cv/awesome-cv-cn.pdf)
 
 ![Example](http://huajh.github.io/img/cv/awesome-cv-cn-1.png)
-![Example](http://huajh.github.io/img/cv/awesome-cv-cn-2.png)
 
 
 ## clone
