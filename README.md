@@ -16,11 +16,6 @@ An output example can be found [here](huajh.github.io/cv/awesome-cv.pdf)
 ![Example](http://huajh.github.io/img/cv/awesome-cv-1.png)
 
 
-**中文样例**: [PDF](http://huajh.github.io/cv/awesome-cv-cn.pdf)
-
-![Example](http://huajh.github.io/img/cv/awesome-cv-cn-1.png)
-
-
 ## clone
 Since the Simplified Chinese fonts files in `zh-cn` branch are very large,  if you only need a CV in Enlish, it is better to clone only the master branch. 
 
