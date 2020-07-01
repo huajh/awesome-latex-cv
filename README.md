@@ -11,7 +11,7 @@
 
 ## Example
 
-An output example can be found [here](huajh.github.io/cv/awesome-cv.pdf)
+An output example can be found [here](https://huajh.github.io/cv/awesome-cv.pdf)
 
 ![Example](http://huajh.github.io/img/cv/awesome-cv-1.png)
 
