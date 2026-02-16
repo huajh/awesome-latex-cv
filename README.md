@@ -39,7 +39,8 @@ Huajh awesome Latex CV was originally based on a CV template created by Christop
 More informations about the original Christophe Roger (Darwiin) template can be found here :
 
    -  [ Github ](https://github.com/darwiin/awesome-neue-latex-cv)
-   -  [ Overleaf ](https://www.overleaf.com/latex/templates/awesome-source-cv/wrdjtkkytqcw)   
+   -  [ Overleaf ](https://www.overleaf.com/latex/templates/awesome-source-cv/wrdjtkkytqcw)
+   -  [ SpicyChai LaTeX ](https://latex.spicychai.com/) — Online editor with AI-powered templates
 
 
 ## The Latex file structure
